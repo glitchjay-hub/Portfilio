@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jay Chaudhary</title>
+    <meta
+      name="description"
+      content="Jay Chaudhary — Computer Science undergraduate from India. Building open-source tools,  engines and privacy tech."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
+  <body class="light-mode">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-bar" class="scroll-bar"></div>
+
+    <!-- Noise texture overlay (light mode only) -->
+    <div class="noise-overlay"></div>
+
+    <!-- Cursor -->
+    <div id="cursor-glow" class="cursor-glow"></div>
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="custom-cursor-follower" class="custom-cursor-follower"></div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="top-header" id="top-header">
+      <div class="logo"><span class="logo-text">Jay</span></div>
+
+      <nav class="pill-nav">
+    <a href="#home" class="nav-link">
+  <span class="nav-text" data-text="Home">Home</span>
+</a>
+
+<a href="#about" class="nav-link">
+  <span class="nav-text" data-text="About">About</span>
+</a>
+
+<a href="#projects" class="nav-link">
+  <span class="nav-text" data-text="Projects">Projects</span>
+</a>
+
+<a href="#expertise" class="nav-link">
+  <span class="nav-text" data-text="Skills">Skills</span>
+</a>
+
+<a href="#experience" class="nav-link">
+  <span class="nav-text" data-text="Experience">Experience</span>
+</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          id="theme-toggle"
+          class="icon-btn"
+          aria-label="Toggle Dark Mode"
+        >
+          <i class="ri-moon-line"></i>
+        </button>
+        <a href="#" id="connect-btn" class="connect-btn">
+          <span class="nav-text" data-text="Connect ↗">Connect ↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <main id="home" class="hero">
+      <!-- Ambient floating blobs -->
+      <div class="hero-blob blob-1"></div>
+      <div class="hero-blob blob-2"></div>
+
+      <!-- Big typography — Row 1: DATA … SCIENCE | Row 2: CYCLING + TOGGLE -->
+      <div class="huge-typography">
+        <!-- Row 1: DATA SCIENCE side by side -->
+        <div class="line hero-line-top reveal-line stack-up">
+          <span class="pixel-text">Computer </span>
+          <span class="hero-science">Science</span>
+        </div>
+        <!-- Row 2: cycling word + toggle button inline -->
+        <div
+          class="line hero-line-bottom reveal-line stack-up"
+          style="--stack-delay: 0.12s"
+        >
+          <span class="word-cycle" id="word-cycle">
+            <span class="word-slide active highlight-orange">ENGINEER</span>
+            <span class="word-slide highlight-orange">DEVELOPER</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Hero bottom bar -->
+      <div class="hero-footer">
+        <div class="hero-roles">
+          <p class="role-title">
+          <span class="highlight-orange font-bold">AI/ML</span>
+&
+<span class="highlight-orange font-bold">Blockchain</span>
+&
+<span class="highlight-orange font-bold">Game Development</span>
+          </p>
+          <p class="role-desc">
+            <span class="dot"></span>Building AI, Blockchain, and Unity projects while exploring Open Source and Software Development.
+          </p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-intro">
+            <p class="intro-greeting">Hi, I'm</p>
+            <h1 class="intro-name">Jay Chaudhary.</h1>
+            <!-- Resume pill button + avatar -->
+            <div class="hero-intro-row">
+              <a href="resume.pdf" target="_blank" class="resume-pill-btn">
+                <i class="ri-file-text-line"></i> Resume
+              </a>
+              <div class="avatar-container">
+                <img src="jay.jpeg" alt="Jay Chaudhary" />
+              </div>
+            </div>
+          </div>
+          <!-- Stats row -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">10+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">Still</span>
+              <span class="stat-label">Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rotating stamp badge -->
+      <div class="rotating-badge">
+        <svg viewBox="0 0 180 180" width="150" height="150">
+          <defs>
+            <path
+              id="badgePath"
+              d="M90,90 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"
+            />
+          </defs>
+          <circle
+            cx="90"
+            cy="90"
+            r="80"
+            fill="var(--badge-bg)"
+            stroke="var(--border)"
+            stroke-width="1"
+            stroke-dasharray="5 3"
+          />
+          <circle
+            cx="90"
+            cy="90"
+            r="55"
+            fill="var(--badge-inner)"
+            stroke="var(--border)"
+            stroke-width="1"
+          />
+          <circle
+            cx="90"
+            cy="90"
+            r="48"
+            fill="var(--badge-inner)"
+            stroke="var(--border)"
+            stroke-width="0.5"
+            stroke-dasharray="3 2"
+          />
+          <text
+            x="90"
+            y="82"
+            text-anchor="middle"
+            font-size="22"
+            fill="var(--orange)"
+          >
+            ★
+          </text>
+          <text
+            x="90"
+            y="97"
+            text-anchor="middle"
+            font-size="8.5"
+            font-weight="800"
+            font-family="Outfit,sans-serif"
+            fill="var(--text)"
+            letter-spacing="1"
+          >
+            Learning
+          </text>
+          <text
+            x="90"
+            y="109"
+            text-anchor="middle"
+            font-size="7"
+            font-family="Outfit,sans-serif"
+            fill="var(--muted)"
+            letter-spacing="0.5"
+          >
+            BUILDER
+          </text>
+          <text
+            font-size="8.5"
+            font-weight="700"
+            font-family="Outfit,sans-serif"
+            fill="var(--muted)"
+            letter-spacing="2.5"
+          >
+            <textPath href="#badgePath" startOffset="2%">
+             ✦ Jay Chaudhary · AI • Blockchain • Unity Developer · INDIA ✦
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <!-- scroll hint removed -->
+    </main>
+
+    <!-- Marquee ticker -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Web3</span><span class="marquee-dot">●</span> <span></span
+        ><span class="marquee-dot">●</span> <span>Python</span
+        ><span class="marquee-dot">●</span> <span>Learning</span
+        ><span class="marquee-dot">●</span> <span>JavaScript</span
+        ><span class="marquee-dot">●</span> <span>Flutter</span
+        ><span class="marquee-dot">●</span> <span>Java</span
+        ><span class="marquee-dot">●</span> <span>C/C++</span
+        ><span class="marquee-dot">●</span>
+
+        <span>Web3</span><span class="marquee-dot">●</span> <span></span
+        ><span class="marquee-dot">●</span> <span>Python</span
+        ><span class="marquee-dot">●</span> <span>Learning</span
+        ><span class="marquee-dot">●</span> <span>JavaScript</span
+        ><span class="marquee-dot">●</span> <span>Flutter</span
+        ><span class="marquee-dot">●</span> <span>Java</span
+        ><span class="marquee-dot">●</span> <span>C/C++</span
+        ><span class="marquee-dot">●</span>
+      </div>
+    </div>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="about">
+      <div class="about-inner">
+        <div class="about-left stack-up">
+          <span class="section-tag">WHO I AM</span>
+          <h2 class="section-heading">About<br /><em>Me</em></h2>
+          <div class="section-accent"></div>
+          <div class="about-avatar-big">
+            <img src="jay.jpeg" alt="Jay chaudhary" />
+            <div class="avatar-ring"></div>
+          </div>
+        </div>
+        <div class="about-right stack-up" style="--stack-delay: 0.2s">
+          <p class="about-big-text">
+           <span class="highlight-orange font-bold">I'm Jay</span>, an aspiring software developer and game developer who enjoys turning ideas into real-world projects. My interests span artificial intelligence, machine learning, blockchain technology, Unity game development, and software engineering. I am constantly learning, building, and exploring new technologies to create impactful and innovative solutions.
+          </p>
+          <p class="about-body">
+            Currently diving deep into Flutter, Python, Web3, JavaScript and
+            AI/ML. Not an expert yet, but every project i work on gets me
+            closer. Still early and just getting started.
+          </p>
+          <!-- Tech stack quick-view -->
+          <div class="about-tech-stack">
+
+            <div class="tech-pills">
+              <span class="tech-pill">
+                <i class="devicon-python-plain"></i> Python
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-javascript-plain"></i> JS
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-html5-plain"></i> HTML5
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-css3-plain"></i> CSS3
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-java-plain"></i> Java
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-git-plain"></i> Git
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-cplusplus-plain"></i> C/C++
+              </span>
+
+              <span class="tech-pill">
+                <i class="devicon-flutter-plain"></i> Flutter
+              </span>
+
+              <span class="tech-pill">
+                <i class="ri-links-fill"></i> Web3
+              </span>
+            </div>
+          </div>
+
+          <div class="about-tags" style="margin-top: 20px">
+            <span class="tag">🐍 Python</span>
+            <span class="tag">🌐 Learning</span>
+            <span class="tag">🏗️ Building</span>
+          </div>
+          <a href="#projects" class="about-cta"
+            >See my work <i class="ri-arrow-right-up-line"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERTISE ===================== -->
+    <section id="expertise" class="expertise">
+      <div class="section-header-row stack-up">
+        <span class="section-tag">MY SKILLS</span>
+        <h2 class="section-heading-center">Expertise</h2>
+        <div class="section-accent" style="margin: 10px auto 0"></div>
+      </div>
+
+      <div class="expertise-grid">
+        <div
+          class="expertise-card reveal stack-up"
+          style="--stack-delay: 0.05s"
+        >
+          <div class="expertise-card-top">
+            <div class="exp-icon"><i class="ri-code-s-slash-line"></i></div>
+            <div class="exp-num">01</div>
+          </div>
+          <h3>Software Development, AI & Game Development</h3>
+<p>
+Passionate about building software solutions using C, C++, Java, Python, JavaScript, HTML, and CSS. Currently expanding my expertise in Artificial Intelligence, Machine Learning, Blockchain Technology, Unity Game Development, and problem-solving through Data Structures and Algorithms.
+</p>
+          <div class="exp-tags">
+            <span>Python</span><span>JavaScript</span><span>C++</span><span>C#</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tool circles -->
+      <div class="tools-section reveal stack-up" style="--stack-delay: 0.1s">
+        <h3 class="tools-title">Tools I Use</h3>
+        <div class="tools-row">
+          <div class="tool-circle" data-name="Python" data-color="#3776AB">
+            <i class="devicon-python-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="Git" data-color="#F44336">
+            <i class="devicon-git-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="HTML5" data-color="#FF5722">
+            <i class="devicon-html5-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="CSS3" data-color="#2196F3">
+            <i class="devicon-css3-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="JavaScript" data-color="#F7DF1E">
+            <i class="devicon-javascript-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="Java" data-color="#f89820">
+            <i class="devicon-java-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="C" data-color="#9C27B0">
+            <i class="devicon-c-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="C++" data-color="#9C27B0">
+            <i class="devicon-cplusplus-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="VS Code" data-color="#007ACC">
+            <i class="devicon-vscode-plain"></i>
+          </div>
+
+          <div class="tool-circle" data-name="Flutter" data-color="#1D6F42">
+            <i class="devicon-flutter-plain"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="works">
+      <div class="section-header-row stack-up">
+        <span class="section-tag">FEATURED WORK</span>
+        <h2 class="section-heading-center">Projects</h2>
+        <div class="section-accent" style="margin: 10px auto 0"></div>
+      </div>
+
+<div class="works-grid">
+
+  <!-- Sentinel -->
+  <div class="work-card reveal stack-up"
+    style="background: linear-gradient(135deg,#0a0a18 0%,#1a1a35 50%,#0d1a2e 100%);">
+
+    <div class="work-bg-art">
+      <div class="art-orb o1"></div>
+      <div class="art-orb o2"></div>
+      <div class="art-orb o3"></div>
+    </div>
+
+    <div class="work-card-inner">
+      <div class="work-badge">
+        <i class="ri-shield-keyhole-line"></i> AI + Blockchain
+      </div>
+
+      <h3 class="work-title">Sentinel</h3>
+
+      <p class="work-desc">
+        An AI-powered blockchain fraud detection platform that analyzes Ethereum
+        transactions in real time and classifies them as Safe, Suspicious, or
+        Fraudulent using machine learning techniques and transaction risk analysis.
+      </p>
+
+      <a href="https://github.com/glitchjay-hub/BLOCKCHIAINPP" target="_blank" class="work-link">
+        View on GitHub <i class="ri-arrow-right-up-line"></i>
+      </a>
+    </div>
+  </div>
+
+  
+  
+
+     <!-- Flappy Bird -->
+  <div class="work-card reveal stack-up"
+    style="background: linear-gradient(135deg,#1a0a00 0%,#2d1400 50%,#ff6b00 100%);">
+
+    <div class="work-bg-art">
+      <div class="art-orb o1"></div>
+      <div class="art-orb o2"></div>
+      <div class="art-orb o3"></div>
+    </div>
+
+    <div class="work-card-inner">
+      <div class="work-badge">
+        <i class="ri-game-line"></i> Unity
+      </div>
+
+      <h3 class="work-title">Flappy Bird Clone</h3>
+
+      <p class="work-desc">
+        A 2D endless runner game developed in Unity using C#, featuring obstacle
+        generation, score tracking, collision detection, and responsive gameplay mechanics.
+      </p>
+
+      <a href="https://github.com/glitchjay-hub/FlappyBirdUnity" target="_blank" class="work-link">
+        View on GitHub <i class="ri-arrow-right-up-line"></i>
+      </a>
+    </div>
+  </div>
+   <!-- Habi-Doro -->
+  <div class="work-card reveal stack-up"
+    style="background: linear-gradient(135deg,#001a0f 0%,#003322 50%,#004d33 100%);">
+
+    <div class="work-bg-art">
+      <div class="art-orb o1"></div>
+      <div class="art-orb o2"></div>
+      <div class="art-orb o3"></div>
+    </div>
+
+    <div class="work-card-inner">
+      <div class="work-badge">
+        <i class="ri-dashboard-line"></i> Productivity
+      </div>
+
+      <h3 class="work-title">Habi-Doro</h3>
+
+      <p class="work-desc">
+        A productivity suite featuring habit tracking, streak monitoring,
+        Pomodoro focus sessions, heatmaps, calendar analytics, and task
+        management with persistent local storage.
+      </p>
+
+      <a href="https://github.com/glitchjay-hub/Habi-Doro" target="_blank" class="work-link">
+        View on GitHub <i class="ri-arrow-right-up-line"></i>
+      </a>
+    </div>
+  </div>
+
+ 
+  <!-- Tic Tac Toe -->
+  <div class="work-card reveal stack-up"
+    style="background: linear-gradient(135deg,#2a0000 0%,#4d0000 50%,#800000 100%);">
+
+    <div class="work-bg-art">
+      <div class="art-orb o1"></div>
+      <div class="art-orb o2"></div>
+      <div class="art-orb o3"></div>
+    </div>
+
+    <div class="work-card-inner">
+      <div class="work-badge">
+        <i class="ri-code-box-line"></i> Web App
+      </div>
+
+      <h3 class="work-title">Tic Tac Toe</h3>
+
+      <p class="work-desc">
+        An interactive web-based Tic Tac Toe game built using HTML, CSS, and
+        JavaScript with winner detection, turn management, and restart functionality.
+      </p>
+
+      <a href="https://github.com/glitchjay-hub/Tic-Tac-Toe-Game" target="_blank" class="work-link">
+        View on GitHub <i class="ri-arrow-right-up-line"></i>
+      </a>
+    </div>
+  </div>
+
+   <!--Void runner-->
+   <div class="work-card reveal stack-up"
+    style="background: linear-gradient(135deg,#14001f 0%,#2d0a4d 50%,#4b0082 100%);">
+
+    <div class="work-bg-art">
+      <div class="art-orb o1"></div>
+      <div class="art-orb o2"></div>
+      <div class="art-orb o3"></div>
+    </div>
+    <div class="work-card-inner">
+      <div class="work-badge">
+        <i class="ri-gamepad-line"></i> In Progress
+      </div>
+
+      <h3 class="work-title">Void Runner</h3>
+
+      <p class="work-desc">
+        Currently under development. A fast-paced Unity game focused on endless
+        gameplay, obstacle mechanics, and progressive difficulty systems.
+      </p>
+
+      <span class="work-link muted">Coming Soon</span>
+    </div>
+  </div>
+
+
+</div>
+    </section>
+
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="experience">
+      <div class="section-header-row stack-up">
+        <span class="section-tag">MY JOURNEY</span>
+        <h2 class="section-heading-center">Timeline</h2>
+        <div class="section-accent" style="margin: 10px auto 0"></div>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline-row reveal stack-up" style="--stack-delay: 0.05s">
+          <div class="timeline-left">
+            <span class="timeline-date">2025</span>
+          </div>
+          <div class="timeline-center">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+           <div class="timeline-row reveal stack-up">
+  <div class="timeline-left">
+    <span class="timeline-date">2025</span>
+  </div>
+  <div class="timeline-center">
+    <div class="timeline-dot"></div>
+    <div class="timeline-line"></div>
+  </div>
+  <div class="timeline-right">
+    <div class="timeline-card">
+      <span class="timeline-tag">Education</span>
+      <h3>B.Tech Computer Science & Engineering</h3>
+      <p>
+        Started my Computer Science journey at KIET Group of Institutions.
+        Began learning C, C++, Data Structures & Algorithms, and Web Development.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-row reveal stack-up">
+  <div class="timeline-left">
+    <span class="timeline-date">2026</span>
+  </div>
+  <div class="timeline-center">
+    <div class="timeline-dot"></div>
+    <div class="timeline-line"></div>
+  </div>
+  <div class="timeline-right">
+    <div class="timeline-card">
+      <span class="timeline-tag">Projects</span>
+      <h3>Built Real-World Projects</h3>
+      <p>
+        Developed Sentinel (AI + Blockchain), Habi-Doro, Flappy Bird Clone,
+        and Tic Tac Toe while strengthening my skills in software development,
+        problem solving, and UI design.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-row reveal stack-up">
+  <div class="timeline-left">
+    <span class="timeline-date">2026</span>
+  </div>
+  <div class="timeline-center">
+    <div class="timeline-dot"></div>
+    <div class="timeline-line"></div>
+  </div>
+  <div class="timeline-right">
+    <div class="timeline-card">
+      <span class="timeline-tag">Open Source</span>
+      <h3>Open Source & Community Learning</h3>
+      <p>
+        Started contributing to open-source projects and participating in
+        programs like GSSoC while continuously improving development skills.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="timeline-row reveal stack-up">
+  <div class="timeline-left">
+    <span class="timeline-date">Present</span>
+  </div>
+  <div class="timeline-center">
+    <div class="timeline-dot timeline-dot-future"></div>
+  </div>
+  <div class="timeline-right">
+    <div class="timeline-card timeline-card-future">
+      <span class="timeline-tag timeline-tag-future">🚀 Current Focus</span>
+      <h3>AI, Blockchain & Game Development</h3>
+      <p>
+        Currently building Void Runner and exploring Artificial Intelligence,
+        Machine Learning, Blockchain Development, Unity Game Development, and
+        advanced Data Structures & Algorithms.
+      </p>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+        
+      
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bottom-footer">
+      <div class="footer-top stack-up">
+        <h2 class="footer-huge footer-huge-wide">
+          LET'S BUILD<br /><em class="highlight-orange">SOMETHING</em
+          ><br />TOGETHER
+        </h2>
+        <div class="footer-email-display">
+          <i class="ri-mail-line"></i>
+          <a href="mailto:jaychaudhary2976@gmail.com" class="footer-email-text"
+            >jaychaudhary2976@gmail.com</a
+          >
+        </div>
+        <a href="mailto:jaychaudhary2976@gmail.com" class="big-contact-btn">
+          Get In Touch <i class="ri-arrow-right-up-line"></i>
+        </a>
+      </div>
+
+      <div class="footer-meta">
+        <div class="socials">
+          <a href="https://github.com/glitchjay-hub" target="_blank"
+            ><i class="ri-github-fill"></i> GitHub</a
+          >
+          <a href="https://x.com/glitchjay__" target="_blank"
+            ><i class="ri-twitter-x-fill"></i> X</a
+          >
+          <a href="https://www.linkedin.com/in/jay-chaudhary-38ba99380/" target="_blank"
+            ><i class="ri-linkedin-fill"></i> LinkedIn</a
+          >
+          <a href="jaychaudhary2976@gmail.com"
+            ><i class="ri-mail-line"></i> Email</a
+          >
+        </div>
+        <!-- Copyright + cat in a flex row -->
+        <div class="footer-credit-row">
+          <div class="copyright">© 2026 Jay Chaudhary · Turning Ideas into Reality ✨</div>
+          <!-- Sitting cat to the right of "made with love" -->
+          <div class="footer-cat-wrap">
+            <div class="cat-scene">
+              <svg
+                class="cat-svg"
+                viewBox="0 0 130 110"
+                width="90"
+                height="70"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- Shadow -->
+                <ellipse
+                  cx="63"
+                  cy="105"
+                  rx="34"
+                  ry="4"
+                  fill="rgba(0,0,0,0.08)"
+                />
+                <!-- Tail curved around body (sitting) -->
+                <path
+                  class="cat-tail"
+                  d="M88 90 Q108 95 110 80 Q112 66 96 62"
+                  stroke="#3d4466"
+                  stroke-width="10"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <!-- Body (sitting — taller, rounder) -->
+                <ellipse cx="58" cy="82" rx="32" ry="26" fill="#3d4466" />
+                <!-- Belly -->
+                <ellipse cx="58" cy="88" rx="16" ry="16" fill="#c8cfe8" />
+                <!-- Head -->
+                <ellipse cx="58" cy="50" rx="28" ry="26" fill="#3d4466" />
+                <!-- Ears -->
+                <polygon points="32,34 26,12 46,28" fill="#3d4466" />
+                <polygon points="33,32 28,15 44,27" fill="#ffb3c6" />
+                <polygon points="84,34 90,12 70,28" fill="#3d4466" />
+                <polygon points="83,32 88,15 72,27" fill="#ffb3c6" />
+                <!-- Eyes -->
+                <ellipse cx="46" cy="48" rx="7" ry="8" fill="white" />
+                <ellipse cx="70" cy="48" rx="7" ry="8" fill="white" />
+                <ellipse
+                  class="cat-pupil-l"
+                  cx="46"
+                  cy="49"
+                  rx="4"
+                  ry="5"
+                  fill="#1a1a2e"
+                />
+                <ellipse
+                  class="cat-pupil-r"
+                  cx="70"
+                  cy="49"
+                  rx="4"
+                  ry="5"
+                  fill="#1a1a2e"
+                />
+                <circle cx="47" cy="47" r="1.5" fill="white" />
+                <circle cx="71" cy="47" r="1.5" fill="white" />
+                <!-- Nose -->
+                <polygon points="58,58 54,62 62,62" fill="#ff8fab" />
+                <!-- Mouth -->
+                <path
+                  d="M54 62 Q58 67 62 62"
+                  stroke="#5a5a7a"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+                <!-- Whiskers left -->
+                <line
+                  x1="20"
+                  y1="56"
+                  x2="48"
+                  y2="59"
+                  stroke="#aaa"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="18"
+                  y1="61"
+                  x2="48"
+                  y2="62"
+                  stroke="#aaa"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+                <!-- Whiskers right -->
+                <line
+                  x1="96"
+                  y1="56"
+                  x2="68"
+                  y2="59"
+                  stroke="#aaa"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="98"
+                  y1="61"
+                  x2="68"
+                  y2="62"
+                  stroke="#aaa"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+                <!-- Front paws (sitting, tucked in front) -->
+                <ellipse cx="46" cy="104" rx="11" ry="6" fill="#3d4466" />
+                <ellipse cx="70" cy="104" rx="11" ry="6" fill="#3d4466" />
+                <!-- Paw toes left -->
+                <ellipse cx="40" cy="102" rx="3.5" ry="2.5" fill="#2d3356" />
+                <ellipse cx="46" cy="100" rx="3.5" ry="2.5" fill="#2d3356" />
+                <ellipse cx="52" cy="102" rx="3.5" ry="2.5" fill="#2d3356" />
+                <!-- Paw toes right -->
+                <ellipse cx="64" cy="102" rx="3.5" ry="2.5" fill="#2d3356" />
+                <ellipse cx="70" cy="100" rx="3.5" ry="2.5" fill="#2d3356" />
+                <ellipse cx="76" cy="102" rx="3.5" ry="2.5" fill="#2d3356" />
+              </svg>
+              <div class="cat-speech">Meow! 🐾</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating game button -->
+    <button
+      id="open-game-btn"
+      class="floating-game-btn"
+      aria-label="Void Runner"
+    >
+      <i class="ri-gamepad-line"></i>
+      <span class="game-tooltip">Void Runner 🚀</span>
+    </button>
+
+    <!-- ===================== CONNECT MODAL ===================== -->
+    <div id="connect-modal" class="modal-overlay">
+      <div class="connect-banner">
+        <div class="connect-left">
+          <div class="connect-pill pill-a">
+            <i class="ri-smartphone-line"></i> Mobile Dev
+          </div>
+          <div class="connect-pill pill-b">
+            <i class="ri-shield-keyhole-line"></i>
+          </div>
+          <div class="connect-pill pill-c">
+            <i class="ri-bar-chart-box-line"></i> Data Science
+          </div>
+          <div class="connect-pill pill-d">
+            <i class="ri-code-s-slash-line"></i> Learning
+          </div>
+          <div class="connect-pill pill-you">You 👋</div>
+        </div>
+        <div class="connect-right">
+          <h2>
+            Let's build<br />something
+            <span class="highlight-orange">great</span>!
+          </h2>
+          <p>Open for internships, collaborations and open-source projects.</p>
+          <div class="connect-actions">
+            <a
+              href="mailto:jaychaudhary2976@gmail.com"
+              class="connect-action-btn primary"
+              >Send Email</a
+            >
+            <a
+              href="https://wa.me/8650811313"
+              target="_blank"
+              class="connect-action-btn whatsapp"
+              ><i class="ri-whatsapp-line"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/jay-chaudhary-38ba99380/"
+              target="_blank"
+              class="connect-action-btn linkedin"
+              ><i class="ri-linkedin-fill"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== SNAKE GAME MODAL ===================== -->
+    <div id="game-modal" class="modal-overlay">
+      <div class="game-container">
+        <!-- Attractive game header -->
+        <div class="game-attract-banner">
+          <div class="game-attract-icon">🎮</div>
+          <div class="game-attract-text">
+  <h2 class="game-title">Void Runner</h2>
+  <p class="game-subtitle">An endless Unity adventure currently in development 🚀</p>
+</div>
+          <button
+            id="close-game"
+            class="game-btn game-close"
+            aria-label="Close"
+          >
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+
+       <div class="game-hint">
+  Coming Soon • Unity • Endless Runner • Currently Under Development
+</div>
+        <div class="void-runner-preview">
+  <h3>🚀 Void Runner</h3>
+  <p>
+    A fast-paced endless runner currently under development in Unity.
+  </p>
+
+  <ul>
+    <li>🎮 Unity Game Development</li>
+    <li>⚡ Dynamic Obstacles</li>
+    <li>🏆 Score & Progression System</li>
+    <li>🚀 Coming Soon</li>
+  </ul>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html><div id="game-over-text" class="game-over hidden">
